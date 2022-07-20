@@ -41,7 +41,7 @@ $Result = $DB->query($Query)->fetch();
 # (I often like to store queries in a seperate SQL file)
 $Result = $DB->query($DB->getSQL('query.sql'))->fetch();
 
-# Make an escape query
+# Make an escaped query
 # Thats mostly the same as you use PDO direct
 $Query = 'SELECT * FROM myTable WHERE id = :id';
 $Result = $DB->query($Query, array('id' => $IDFromSomewhere))->fetch();
