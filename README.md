@@ -1,7 +1,7 @@
 # LightweightPDOHandler
 Lightweight database handler for multiple connections
 
-I often use this little class to handle my database connections in simple way. Its not 100 % feature complete but its working
+I often use this little class to handle my database connections in a simple way. Its not 100 % feature complete but its working.
 
 # Usage example
 ```
