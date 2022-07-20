@@ -16,7 +16,8 @@ $DBConfig                                       = array(
 );
 
 # A little function that makes it easier to ensure that i always get
-# the same instance (haha a "minified multiton" ;)
+# the same instance when i do not know if a already established a 
+# connection (haha a "minified multiton" ;)
 function DB($DB, $DBConfig)
 {
     if(is_null($DB))
