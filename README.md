@@ -15,8 +15,8 @@ $DBConfig                                       = array(
     'Charset'                                       => 'UTF8'
 );
 
-# A little function that makes it easier to ensure that i always get
-# the same instance when i do not know if a already established a 
+# A little function that makes it easier to ensure that I always get
+# the same instance when I do not know if I already established a 
 # connection (haha a "minified multiton" ;)
 function DB($DB, $DBConfig)
 {
@@ -51,6 +51,6 @@ $Result = $DB->query($Query, array('id' => $IDFromSomewhere))->fetch();
 $DB->insert('myTable', array('Column1' => $DataFromSomwhere1, 'Column2' => $DataFromSomewhere2));
 ```
 
-Basically thats it. I planned to implement an update and select feature, but actually i do not needed it, so its open. It just does the jobs that i need and help me handling database connections.
+Basically thats it. I planned to implement an update and select feature, but actually I do not needed it, so its open. It just does the jobs that I need and help me handling database connections.
 
 If you like it and you want it feature complete, give it a star.
