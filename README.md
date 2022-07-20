@@ -51,6 +51,6 @@ $Result = $DB->query($Query, array('id' => $IDFromSomewhere))->fetch();
 $DB->insert('myTable', array('Column1' => $DataFromSomwhere1, 'Column2' => $DataFromSomewhere2));
 ```
 
-Basically thats it. I planned to implement an update and select feature, but actually I do not needed it, so its open. It just does the jobs that I need and help me handling database connections.
+Basically that's it. I planned to implement an update and select feature, but actually I do not need it, so it's open. It just does the jobs that I need and help me handling database connections.
 
 If you like it and you want it feature complete, give it a star.
