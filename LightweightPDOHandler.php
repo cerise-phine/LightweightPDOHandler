@@ -33,7 +33,7 @@
 #   IN THE SOFTWARE. 
 #
 ################################################################################
-class LightweightPDOHandler {
+class Database {
     
     # 1 Variables for Class
     # 1.1 PDO and connection handles
@@ -64,7 +64,9 @@ class LightweightPDOHandler {
                     'Config-004'            => 'No database name given in config.',
                     'Config-005'            => 'Given PDSN is not supported.',
                     'Config-006'            => 'No port given in config.',
+                    'Config-007'            => 'Given config is not an array.',
                     'Connect-001'           => 'Connection failed.',
+                    'Handle-001'            => 'Handle already exists.',
                     'executeQuery-001'      => 'Prepare failed.',
                     'executeQuery-002'      => 'Execute failed.',
                     'executeQuery-003'      => 'SQL File not found.'
@@ -223,6 +225,37 @@ class LightweightPDOHandler {
                 'Message'                   => $this->Errors['Connect-003'],
                 'Value'                     => $File
             );
+        }
+    }
+    
+    # 3.9 newHandle()
+    public function newHandle($Config, $Handle)
+    {
+        # 3.9.1 check if config is an array before do further checks
+        if(is_array($Config))
+        {
+            # 3.9.1.1 check if handle already exists
+            if(!isset($this->Handles[$Handle]))
+            {
+                # 3.9.1.1.1 set config
+                $this->setConfig($Config, $Handle);
+                
+                # 3.9.1.1.2 seems okay, establish connection
+                $this->connect($Handle);
+                
+                # 3.9.1.1.3 return true
+                return true;
+            }
+            else
+            {
+                $this->Error[]          = $this->Errors['Handle-001'];
+                return false;
+            }
+        }
+        else
+        {
+            $this->Error[]              = $this->Errors['Config-007'];
+            return false;
         }
     }
     
